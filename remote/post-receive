@@ -6,7 +6,7 @@
 
 BASE_URL='work.minimill.co'              # Your domain
 CERBERUS_DIR='/srv/work/public_html/'    # Location to serve static files
-CERBERUS='~/bin/cerberus-remote'         # Location of the cerberus script
+CERBERUS='/root/bin/cerberus-remote'         # Location of the cerberus script
 
 ###########################
 # Script logic            #
