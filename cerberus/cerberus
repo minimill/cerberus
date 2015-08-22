@@ -21,7 +21,7 @@ if [ "$1" = "init" ]; then
 
     PROJECT_NAME=${PWD##*/}
 
-    ssh $REMOTE "source ~/.bashrc && cerberus-remote init $REPOS_FOLDER $PROJECT_NAME"
+    ssh $REMOTE "bash -ic cerberus-remote init $REPOS_FOLDER $PROJECT_NAME"
 
     git remote add deploy "$REMOTE:$REPOS_FOLDER/$PROJECT_NAME.git"
 
