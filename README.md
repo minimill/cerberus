@@ -31,7 +31,7 @@ Deploy static sites to obfuscated subdomains using just Git and Nginx.
         CEBERUS='./ceberus'              # Location of the ceberus script
         ```
 
-    2. Put a copy of `post-receive` in `path/to/your_repo.git/hooks/`.  Make sure it's executable.
+    2. Put a copy of `post-receive` in `path/to/your_repo.git/hooks/`.  Make sure it's executable
 
         ```bash
         cp post-receive path/to/your_repo.git/hooks

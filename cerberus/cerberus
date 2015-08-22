@@ -21,8 +21,9 @@ if [ "$1" = "init" ]; then
 
     PROJECT_NAME=${PWD##*/}
 
-    ssh $REMOTE "bash -ic cerberus-remote init $REPOS_FOLDER $PROJECT_NAME"
+    ssh $REMOTE "bash -ic 'cerberus-remote init $REPOS_FOLDER $PROJECT_NAME'"
 
+    git remote remove deploy
     git remote add deploy "$REMOTE:$REPOS_FOLDER/$PROJECT_NAME.git"
 
     echo "Deploy with 'git push deploy'"
