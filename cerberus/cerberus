@@ -23,7 +23,7 @@ if [ "$1" = "init" ]; then
 
     ssh $REMOTE "source ~/.bashrc && cerberus-remote init $REPOS_FOLDER $PROJECT_NAME"
 
-    git remote add deploy "$REMOTE:$REPOS_FOLDER$PROJECT_NAME.git"
+    git remote add deploy "$REMOTE:$REPOS_FOLDER/$PROJECT_NAME.git"
 
     echo "Deploy with 'git push deploy'"
 
