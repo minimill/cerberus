@@ -1,0 +1,28 @@
+#! /bin/bash
+
+###########################
+# Configuration Variables #
+###########################
+
+BASE_URL='.cerberus.minimill.co'  # Your domain
+CERBERUS_DIR='sites/'             # Location to serve static files
+CERBERUS='./cerberus'              # Location of the cerberus script
+
+###########################
+# Script logic            #
+###########################
+
+# Find the name of the project
+SUFFIX='.git'
+CONTAINING_FOLDER=${PWD##*/}
+PROJECT_NAME=${CONTAINING_FOLDER%$SUFFIX}
+
+# Find or create the project's live folder
+PROJECT_FOLDER="$CERBERUS_DIR$($CERBERUS $CERBERUS_DIR $PROJECT_NAME)"
+
+# Checkout the latest code
+GIT_WORK_TREE=$PROJECT_FOLDER git checkout -f
+
+# Print the URL we just deployed to.
+URL="$PROJECT_NAME$BASE_URL"
+echo "Deployed to $URL."
