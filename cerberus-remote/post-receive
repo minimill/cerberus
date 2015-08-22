@@ -6,7 +6,7 @@
 
 BASE_URL='work.minimill.co'    # Your domain
 CERBERUS_DIR='/srv/work/'      # Location to serve static files
-CERBERUS='./cerberus'            # Location of the cerberus script
+CERBERUS='cerberus-remote'     # Location of the cerberus script
 
 ###########################
 # Script logic            #
@@ -25,7 +25,7 @@ fi
 PROJECT_NAME="$PROJECT_NAME$BRANCH"
 
 # Find or create the project's live folder
-PROJECT_FOLDER="$($CERBERUS $CERBERUS_DIR $PROJECT_NAME)"
+PROJECT_FOLDER="$($CERBERUS find $CERBERUS_DIR $PROJECT_NAME)"
 
 # Checkout the latest code
 GIT_WORK_TREE="$CERBERUS_DIR$PROJECT_FOLDER" git checkout -f

@@ -1,0 +1,35 @@
+#! /bin/bash
+
+###########################
+# Configuration Variables #
+###########################
+
+BASE_URL='work.minimill.co'    # Your domain
+CERBERUS_DIR='/srv/work/'      # Location to serve static files
+CERBERUS='cerberus-remote'     # Location of the cerberus script
+
+###########################
+# Script logic            #
+###########################
+
+# Find the name of the project
+SUFFIX='.git'
+CONTAINING_FOLDER=${PWD##*/}
+PROJECT_NAME=${CONTAINING_FOLDER%$SUFFIX}
+BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+if [ "$BRANCH" = "master" ]; then
+    BRANCH=''
+else
+    BRANCH="-$BRANCH"
+fi
+PROJECT_NAME="$PROJECT_NAME$BRANCH"
+
+# Find or create the project's live folder
+PROJECT_FOLDER="$($CERBERUS find $CERBERUS_DIR $PROJECT_NAME)"
+
+# Checkout the latest code
+GIT_WORK_TREE="$CERBERUS_DIR$PROJECT_FOLDER" git checkout -f
+
+# Print the URL we just deployed to.
+URL="$BASE_URL/$PROJECT_FOLDER/"
+echo "Deployed to $URL"
