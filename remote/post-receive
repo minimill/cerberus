@@ -31,5 +31,5 @@ PROJECT_FOLDER="$($CERBERUS find $CERBERUS_DIR $PROJECT_NAME)"
 GIT_WORK_TREE="$CERBERUS_DIR$PROJECT_FOLDER" git checkout -f
 
 # Print the URL we just deployed to.
-URL="$BASE_URL/$PROJECT_FOLDER/"
+URL="$PROJECT_FOLDER.$BASE_URL/"
 echo "Deployed to $URL"

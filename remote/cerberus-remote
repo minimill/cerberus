@@ -4,7 +4,7 @@ UID_LENGTH=8
 ME=`basename "$0"`
 
 new_uid () {
-    env LC_CTYPE=C tr -dc "a-zA-Z0-9" < /dev/urandom | head -c $UID_LENGTH
+    env LC_CTYPE=C tr -dc "a-z0-9" < /dev/urandom | head -c $UID_LENGTH
 }
 
 usage () {
