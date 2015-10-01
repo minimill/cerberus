@@ -12,3 +12,4 @@ META_DOMAIN = 'isaaclevien.com'
 META_URL = 'http://' + META_DOMAIN
 META_IMAGE = 'img/art.jpg'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
+STATIC_FOLDER_PATH = '/srv/work/private_html/'

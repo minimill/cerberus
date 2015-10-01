@@ -1,6 +1,6 @@
 import random
 import string
-from app import db
+from app import app, db
 from flask.ext.login import UserMixin, AnonymousUserMixin
 
 authentications = db.Table(
@@ -30,7 +30,7 @@ class Project(db.Model):
 
     @property
     def static_folder(self):
-        return '/Users/dan/working/' + self.path
+        return app.config['STATIC_FOLDER_PATH'] + self.path
 
 
 class User(db.Model, UserMixin):
