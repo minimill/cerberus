@@ -49,7 +49,5 @@ def create_app():
 
 
 def register_blueprints(app):
-    from app.routes import main, users, admin
+    from app.routes import main
     app.register_blueprint(main)
-    app.register_blueprint(users)
-    app.register_blueprint(admin)
