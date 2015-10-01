@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+
+{% block body %}
+<form autocomplete="off" method="POST" action="{{ url_for('main.new') }}">
+    {{ form.csrf_token }}
+    <h1>New Project</h1>
+    {{ macros.render_field(form.name, placeholder='Project Name...') }}
+    {{ macros.render_field(form.path, placeholder='Project folder') }}
+    {{ macros.render_field(form.slug, placeholder='my-project') }}
+    {{ macros.render_field(form.password,
+                           placeholder='Enter your password...') }}
+    {{ macros.render_field(form.confirm_password,
+                           placeholder='Confirm your password...') }}
+    <div class="form-control hidden">
+        <input type="submit" value="Go" >
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+@import 'base';
+
+.logo {
+    display: block;
+    height: 44px;
+    max-width: 100%;
+    position: fixed;
+    bottom: 7.5rem;
+    left: 50%;
+    .transform(translateX(-50%));
+
+        > svg {
+            height: 44px;
+            left: 0;
+
+        rect, polygon {
+            fill: @logo-gray;
+        }
+    }
+}
