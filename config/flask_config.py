@@ -1,15 +1,14 @@
 import secrets
 
 SECRET_KEY = secrets.SECRET_KEY
-META_TITLE = 'Isaac Levien: bassist, composer, and arranger'
+META_TITLE = 'Cerberus: secure static hosting made by Minimill.'
 META_DESCRIPTION = (
-    'Isaac Levien is a bassist, composer, and arranger. He is majoring in Jazz'
-    ' Performance at New England Conservatory.'
+    'Cerberus: secure static hosting made by Minimill.'
 )
-META_NAME = 'Isaac Levien'
-META_TWITTER_HANDLE = '@isaaclevien'
-META_DOMAIN = 'isaaclevien.com'
+META_NAME = 'Cerberus'
+META_TWITTER_HANDLE = '@minimill_co'
+META_DOMAIN = 'work.minimill.co'
 META_URL = 'http://' + META_DOMAIN
-META_IMAGE = 'img/art.jpg'
+META_IMAGE = 'img/lock.svg'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
 STATIC_FOLDER_PATH = '/srv/work/private_html/'
