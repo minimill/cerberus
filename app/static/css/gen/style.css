@@ -1,15 +1,63 @@
+@media screen and (min-width: 1921px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1920px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .mobile-only {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 319px) {
+  html,
+  body {
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 240px) {
+  html,
+  body {
+    font-size: 5px;
+  }
+}
 .border-box {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.text-shadow {
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-}
-.clearfix:after {
-  content: ' ';
-  display: block;
-  clear: both;
-}
 @font-face {
   font-family: 'Calibre';
   src: url('../../font/CalibreWeb-Regular.eot');
@@ -33,11 +81,34 @@ h1,
   text-align: center;
   color: #19517f;
 }
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1,
+  .h1 {
+    margin-bottom: 3.875rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 2.25rem;
+  }
+}
 form {
   width: 90%;
   max-width: 30rem;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
   border: 1px solid #cccccc;
@@ -49,7 +120,7 @@ input:not([type="submit"]) {
   font-size: 1rem;
   line-height: 1.5rem;
   vertical-align: top;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
@@ -80,51 +151,65 @@ input:not([type="submit"]):-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-textarea {
-  resize: vertical;
-}
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
 input[type="submit"] {
-  border-radius: 0;
-  background-color: #ffffff;
-  color: #999999;
-  outline: none;
-  width: 100%;
-  border: none;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ffffff;
-  text-align: center;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 0;
+  height: 4rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  background-image: url(../../img/icon-arrow.svg);
+  background-position: 1rem 1rem;
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 4rem;
+  cursor: pointer;
 }
-input[type="submit"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:hover {
-  background-color: #cccccc;
+input[type="submit"]::-webkit-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-ms-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+form .errors {
+  padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
 }
 .form-control {
   margin-bottom: 1rem;
+  position: relative;
 }
 .form-control.invalid input {
   border-color: #ff3333;
 }
 .form-control.hidden {
   display: none;
-}
-.form-control.half {
-  display: inline-block;
-  width: 48%;
-  float: left;
-}
-.form-control.half + .half {
-  margin-left: 4%;
 }
 .login-form {
   position: absolute;
@@ -138,29 +223,73 @@ form .errors li {
 .login-form input:not([type="submit"]) {
   font-size: 2rem;
   line-height: 2.5rem;
-  padding: 2rem 2rem 2rem 6.5rem;
-  background-image: url(../../img/lock.svg);
-  background-position: 2.125rem 2.125rem;
-  background-size: 2.25rem 2.25rem;
+  padding: 2rem 7rem;
+  background-image: url(../../img/icon-lock.svg);
+  background-position: 2.5rem 2.125rem;
+  background-size: 2rem 2rem;
   background-repeat: no-repeat;
 }
 .login-form input:not([type="submit"])::-webkit-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-ms-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .login-form {
+    position: relative;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  form {
+    padding: 3rem 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  form {
+    padding: 9rem 0 3.875rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .login-form input:not([type="submit"]) {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    padding: 1rem 4.25rem;
+    background-size: 1.25rem 1.25rem;
+    background-position: 1.5rem 1.5rem;
+  }
+  input[type="submit"] {
+    height: 2.75rem;
+    padding: 0.75rem;
+    width: 2.75rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-position: 0.75rem 0.75rem;
+    background-size: 1.25rem 1.25rem;
+  }
+  form {
+    padding: 3.875rem 0;
+  }
 }
 @font-face {
   font-family: 'Calibre';
@@ -185,25 +314,96 @@ h1,
   text-align: center;
   color: #19517f;
 }
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1,
+  .h1 {
+    margin-bottom: 3.875rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 2.25rem;
+  }
+}
 
 
+@media screen and (min-width: 1921px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1920px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .mobile-only {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 319px) {
+  html,
+  body {
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 240px) {
+  html,
+  body {
+    font-size: 5px;
+  }
+}
 .border-box {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.text-shadow {
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-}
-.clearfix:after {
-  content: ' ';
-  display: block;
-  clear: both;
-}
 form {
   width: 90%;
   max-width: 30rem;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
   border: 1px solid #cccccc;
@@ -215,7 +415,7 @@ input:not([type="submit"]) {
   font-size: 1rem;
   line-height: 1.5rem;
   vertical-align: top;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
@@ -246,51 +446,65 @@ input:not([type="submit"]):-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-textarea {
-  resize: vertical;
-}
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
 input[type="submit"] {
-  border-radius: 0;
-  background-color: #ffffff;
-  color: #999999;
-  outline: none;
-  width: 100%;
-  border: none;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ffffff;
-  text-align: center;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 0;
+  height: 4rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  background-image: url(../../img/icon-arrow.svg);
+  background-position: 1rem 1rem;
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 4rem;
+  cursor: pointer;
 }
-input[type="submit"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:hover {
-  background-color: #cccccc;
+input[type="submit"]::-webkit-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-ms-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+form .errors {
+  padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
 }
 .form-control {
   margin-bottom: 1rem;
+  position: relative;
 }
 .form-control.invalid input {
   border-color: #ff3333;
 }
 .form-control.hidden {
   display: none;
-}
-.form-control.half {
-  display: inline-block;
-  width: 48%;
-  float: left;
-}
-.form-control.half + .half {
-  margin-left: 4%;
 }
 .login-form {
   position: absolute;
@@ -304,29 +518,73 @@ form .errors li {
 .login-form input:not([type="submit"]) {
   font-size: 2rem;
   line-height: 2.5rem;
-  padding: 2rem 2rem 2rem 6.5rem;
-  background-image: url(../../img/lock.svg);
-  background-position: 2.125rem 2.125rem;
-  background-size: 2.25rem 2.25rem;
+  padding: 2rem 7rem;
+  background-image: url(../../img/icon-lock.svg);
+  background-position: 2.5rem 2.125rem;
+  background-size: 2rem 2rem;
   background-repeat: no-repeat;
 }
 .login-form input:not([type="submit"])::-webkit-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-ms-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .login-form {
+    position: relative;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  form {
+    padding: 3rem 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  form {
+    padding: 9rem 0 3.875rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .login-form input:not([type="submit"]) {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    padding: 1rem 4.25rem;
+    background-size: 1.25rem 1.25rem;
+    background-position: 1.5rem 1.5rem;
+  }
+  input[type="submit"] {
+    height: 2.75rem;
+    padding: 0.75rem;
+    width: 2.75rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-position: 0.75rem 0.75rem;
+    background-size: 1.25rem 1.25rem;
+  }
+  form {
+    padding: 3.875rem 0;
+  }
 }
 @font-face {
   font-family: 'Calibre';
@@ -351,11 +609,34 @@ h1,
   text-align: center;
   color: #19517f;
 }
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1,
+  .h1 {
+    margin-bottom: 3.875rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 2.25rem;
+  }
+}
 form {
   width: 90%;
   max-width: 30rem;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
   border: 1px solid #cccccc;
@@ -367,7 +648,7 @@ input:not([type="submit"]) {
   font-size: 1rem;
   line-height: 1.5rem;
   vertical-align: top;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
@@ -398,51 +679,65 @@ input:not([type="submit"]):-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-textarea {
-  resize: vertical;
-}
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
 input[type="submit"] {
-  border-radius: 0;
-  background-color: #ffffff;
-  color: #999999;
-  outline: none;
-  width: 100%;
-  border: none;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ffffff;
-  text-align: center;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 0;
+  height: 4rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  background-image: url(../../img/icon-arrow.svg);
+  background-position: 1rem 1rem;
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 4rem;
+  cursor: pointer;
 }
-input[type="submit"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:hover {
-  background-color: #cccccc;
+input[type="submit"]::-webkit-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-ms-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+form .errors {
+  padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
 }
 .form-control {
   margin-bottom: 1rem;
+  position: relative;
 }
 .form-control.invalid input {
   border-color: #ff3333;
 }
 .form-control.hidden {
   display: none;
-}
-.form-control.half {
-  display: inline-block;
-  width: 48%;
-  float: left;
-}
-.form-control.half + .half {
-  margin-left: 4%;
 }
 .login-form {
   position: absolute;
@@ -456,48 +751,198 @@ form .errors li {
 .login-form input:not([type="submit"]) {
   font-size: 2rem;
   line-height: 2.5rem;
-  padding: 2rem 2rem 2rem 6.5rem;
-  background-image: url(../../img/lock.svg);
-  background-position: 2.125rem 2.125rem;
-  background-size: 2.25rem 2.25rem;
+  padding: 2rem 7rem;
+  background-image: url(../../img/icon-lock.svg);
+  background-position: 2.5rem 2.125rem;
+  background-size: 2rem 2rem;
   background-repeat: no-repeat;
 }
 .login-form input:not([type="submit"])::-webkit-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-ms-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
+@media screen and (max-width: 1024px) {
+  .login-form {
+    position: relative;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  form {
+    padding: 3rem 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  form {
+    padding: 9rem 0 3.875rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .login-form input:not([type="submit"]) {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    padding: 1rem 4.25rem;
+    background-size: 1.25rem 1.25rem;
+    background-position: 1.5rem 1.5rem;
+  }
+  input[type="submit"] {
+    height: 2.75rem;
+    padding: 0.75rem;
+    width: 2.75rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-position: 0.75rem 0.75rem;
+    background-size: 1.25rem 1.25rem;
+  }
+  form {
+    padding: 3.875rem 0;
+  }
+}
 
+
+@media screen and (min-width: 1921px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1920px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .mobile-only {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 319px) {
+  html,
+  body {
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 240px) {
+  html,
+  body {
+    font-size: 5px;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1920px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .mobile-only {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 319px) {
+  html,
+  body {
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 240px) {
+  html,
+  body {
+    font-size: 5px;
+  }
+}
 .border-box {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.text-shadow {
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-}
-.clearfix:after {
-  content: ' ';
-  display: block;
-  clear: both;
-}
 form {
   width: 90%;
   max-width: 30rem;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
   border: 1px solid #cccccc;
@@ -509,7 +954,7 @@ input:not([type="submit"]) {
   font-size: 1rem;
   line-height: 1.5rem;
   vertical-align: top;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
@@ -540,51 +985,65 @@ input:not([type="submit"]):-ms-input-placeholder {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-textarea {
-  resize: vertical;
-}
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
 input[type="submit"] {
-  border-radius: 0;
-  background-color: #ffffff;
-  color: #999999;
-  outline: none;
-  width: 100%;
-  border: none;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ffffff;
-  text-align: center;
+  border: 0;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 0;
+  height: 4rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  background-image: url(../../img/icon-arrow.svg);
+  background-position: 1rem 1rem;
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 4rem;
+  cursor: pointer;
 }
-input[type="submit"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:hover {
-  background-color: #cccccc;
+input[type="submit"]::-webkit-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+input[type="submit"]:-ms-input-placeholder {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+form .errors {
+  padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
 }
 .form-control {
   margin-bottom: 1rem;
+  position: relative;
 }
 .form-control.invalid input {
   border-color: #ff3333;
 }
 .form-control.hidden {
   display: none;
-}
-.form-control.half {
-  display: inline-block;
-  width: 48%;
-  float: left;
-}
-.form-control.half + .half {
-  margin-left: 4%;
 }
 .login-form {
   position: absolute;
@@ -598,29 +1057,73 @@ form .errors li {
 .login-form input:not([type="submit"]) {
   font-size: 2rem;
   line-height: 2.5rem;
-  padding: 2rem 2rem 2rem 6.5rem;
-  background-image: url(../../img/lock.svg);
-  background-position: 2.125rem 2.125rem;
-  background-size: 2.25rem 2.25rem;
+  padding: 2rem 7rem;
+  background-image: url(../../img/icon-lock.svg);
+  background-position: 2.5rem 2.125rem;
+  background-size: 2rem 2rem;
   background-repeat: no-repeat;
 }
 .login-form input:not([type="submit"])::-webkit-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 .login-form input:not([type="submit"]):-ms-input-placeholder {
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
   line-height: 2.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .login-form {
+    position: relative;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  form {
+    padding: 3rem 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  form {
+    padding: 9rem 0 3.875rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .login-form input:not([type="submit"]) {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    padding: 1rem 4.25rem;
+    background-size: 1.25rem 1.25rem;
+    background-position: 1.5rem 1.5rem;
+  }
+  input[type="submit"] {
+    height: 2.75rem;
+    padding: 0.75rem;
+    width: 2.75rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-position: 0.75rem 0.75rem;
+    background-size: 1.25rem 1.25rem;
+  }
+  form {
+    padding: 3.875rem 0;
+  }
 }
 @font-face {
   font-family: 'Calibre';
@@ -644,6 +1147,29 @@ h1,
   margin: 0 0 3.875rem;
   text-align: center;
   color: #19517f;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1,
+  .h1 {
+    margin-bottom: 3.875rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  h1,
+  .h1 {
+    margin-bottom: 2.25rem;
+  }
 }
 .logo {
   display: block;
@@ -663,18 +1189,23 @@ h1,
 }
 .logo > svg rect,
 .logo > svg polygon {
-  fill: #f2f2f2;
+  fill: #cccccc;
+}
+@media screen and (max-width: 640px) {
+  .logo {
+    position: relative;
+    bottom: auto;
+    padding: 3rem 0;
+    marign: 0 auto;
+    text-align: center;
+    height: 33px;
+  }
+  .logo > svg {
+    height: 33px;
+  }
 }
 
 .border-box {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-.text-shadow {
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-}
-.clearfix:after {
-  content: ' ';
-  display: block;
-  clear: both;
 }

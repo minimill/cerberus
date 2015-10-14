@@ -9,12 +9,27 @@
     left: 50%;
     .transform(translateX(-50%));
 
-        > svg {
-            height: 44px;
-            left: 0;
+    > svg {
+        height: 44px;
+        left: 0;
 
         rect, polygon {
-            fill: @logo-gray;
+            fill: @light-gray;
+        }
+    }
+}
+
+@media screen and (max-width: @phone-landscape-max) {
+    .logo {
+        position: relative;
+        bottom: auto;
+        padding: 3rem 0;
+        marign: 0 auto;
+        text-align: center;
+        height: 33px;
+
+        > svg {
+            height: 33px;
         }
     }
 }

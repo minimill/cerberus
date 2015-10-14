@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Login---Desktop" sketch:type="MSArtboardGroup" transform="translate(-886.000000, -498.000000)" fill="#3399FF">
+            <path d="M913.414,510.58575 L901.414,498.58575 C900.634,497.80475 899.366,497.80475 898.586,498.58575 C897.805,499.36675 897.805,500.63275 898.586,501.41375 L907.172,509.99975 L888,509.99975 C886.895,509.99975 886,510.89475 886,511.99975 C886,513.10375 886.895,513.99975 888,513.99975 L907.172,513.99975 L898.586,522.58575 C897.805,523.36675 897.805,524.63275 898.586,525.41375 C898.976,525.80475 899.488,525.99975 900,525.99975 C900.512,525.99975 901.024,525.80475 901.414,525.41375 L913.414,513.41375 C914.195,512.63275 914.195,511.36675 913.414,510.58575" id="icon-arrow" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
