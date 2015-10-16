@@ -11,4 +11,4 @@ META_DOMAIN = 'work.minimill.co'
 META_URL = 'http://' + META_DOMAIN
 META_IMAGE = 'img/lock.svg'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
-STATIC_FOLDER_PATH = '/Users/dan/working/'
+STATIC_FOLDER_PATH = '/srv/work/private_html/'
