@@ -6,7 +6,7 @@ from werkzeug.routing import BaseConverter, ValidationError
 from werkzeug.exceptions import HTTPException
 from app.forms import CreateProjectForm, LoginForm
 from app.models import Project, User
-from app import db
+from app import app, db
 
 
 class ProjectHashConverter(BaseConverter):
@@ -43,10 +43,31 @@ main = Blueprint('main', __name__)
 main.add_app_url_map_converter(ProjectHashConverter, 'slug')
 
 
-@main.route('/index.html', methods=['GET'])
-@main.route('/', methods=['GET'])
+def is_project(string):
+    project = Project.query.filter_by(slug=string).first()
+    return project is not None
+
+
+@app.errorhandler(404)
+def handle_404(e):
+    from flask import request
+    route = request.path
+    route = route.lstrip('/')
+    if (current_user.current_project is None or
+            route.startswith('_') or
+            route.find('/') and is_project(route[:route.find('/')])):
+        return "404"
+    return redirect(url_for('main.project',
+                            project=current_user.current_project,
+                            route=route))
+
+
+@main.route('/index.html', defaults={'filename': 'index.html'},
+            methods=['GET'])
+@main.route('/', defaults={'filename': ''}, methods=['GET'])
 @main.route('/<path:filename>', methods=['GET'])
 def root_path(filename=None):
+    print "HERE", filename
     if current_user.current_project is None:
         return abort(404)
     return redirect(url_for('.project',
@@ -54,19 +75,20 @@ def root_path(filename=None):
                             route=filename))
 
 
-@main.route('/<slug:project>/index.html', methods=['GET'])
-@main.route('/<slug:project>/', methods=['GET'])
+@main.route('/<slug:project>/index.html', defaults={'route': 'index.html'},
+            methods=['GET'])
+@main.route('/<slug:project>/', defaults={'route': 'index.html'},
+            methods=['GET'])
 @main.route('/<slug:project>/<path:route>', methods=['GET'])
 def project(project, route=None):
     if current_user.current_project != project:
         return redirect(url_for('.authenticate', project=project))
     try:
-        if route and route != '/':
-            return send_from_directory(project.static_folder, route)
-        return send_from_directory(project.static_folder, 'index.html')
+        if '.' not in route:
+            route = os.path.join(route, 'index.html')
+        return send_from_directory(project.static_folder, route)
     except HTTPException:
-        return send_from_directory(project.static_folder,
-                                   os.path.join(route, 'index.html'))
+        return send_from_directory(project.static_folder, 'index.html')
 
 
 @main.route('/_/new/', methods=['GET', 'POST'])
