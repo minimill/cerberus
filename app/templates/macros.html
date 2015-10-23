@@ -1,31 +1,31 @@
-{% macro render_field(field, label=False, hidden=False, submit=False) %}
-{% set class = kwargs.get('class', '') + ' form-control' %}
-{% if field.errors %}
-	{% set class = class + ' invalid' %}
-{% endif %}
-{% if hidden %}
-	{% set class = class + ' hidden' %}
-{% endif %}
+{%- macro render_field(field, label=False, hidden=False, submit=False) -%}
+{%- set class = 'form-control ' + kwargs.get('class', '') -%}
+{%- if field.errors -%}
+	{%- set class = class + ' invalid' -%}
+{%- endif -%}
+{%- if hidden -%}
+	{%- set class = class + ' hidden' -%}
+{%- endif -%}
 
 <div class="{{class}}">
 
-	{% if label %}
+	{%- if label -%}
 	{{ field.label }}
-	{% endif %}
+	{%- endif -%}
 
 	{{ field(**kwargs) | safe }}
 
-	{% if submit %}
+	{%- if submit -%}
 	<input type="submit" value="Go">
-	{% endif %}
+	{%- endif -%}
 
-	{% if field.errors %}
+	{%- if field.errors -%}
 	<ul class="errors">
-	{% for error in field.errors %}
+	{%- for error in field.errors -%}
 	  	<li>{{ error }}</li>
-	{% endfor %}
+	{%- endfor -%}
 	</ul>
-	{% endif %}
+	{%- endif -%}
 
 </div>
-{% endmacro %}
+{%- endmacro -%}

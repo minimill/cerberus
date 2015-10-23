@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% import "macros.html" as macros %}
+{% block title %}{{ project.name }}{% endblock %}
+{% block description %}Log in to view {{ project.name }} securely and instantly.{% endblock %}
 
 {% block body %}
 <form class="login-form" autocomplete="off" method="POST" action="{{ url_for('main.authenticate', project=project) }}">
     {{ form.csrf_token }}
     <h1>{{ project.name }}</h1>
     {{ macros.render_field(form.slug, hidden=True, value=project.slug) }}
-
     {{ macros.render_field(form.password,
     					   size=20,
     					   autocomplete="off",
