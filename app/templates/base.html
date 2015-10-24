@@ -23,13 +23,11 @@
     <meta property="og:url" content="{{ config.META_URL + request.path }}" />
     <meta property="og:image" content="{{ url_for('static', filename=config.META_IMAGE) }}" />
     <meta property="og:description" content="{{ self.description() }}" />
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='/img/favicon-64.png') }}" sizes="64x64" />
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='/img/favicon-32.png') }}" sizes="32x32" />
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='/img/favicon-16.png') }}" sizes="16x16" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-64.png') }}" sizes="64x64" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-32.png') }}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-16.png') }}" sizes="16x16" />
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
     {%- assets 'less_all' -%}
     <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">

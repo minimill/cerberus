@@ -14,6 +14,7 @@ input:not([type="submit"]) {
     outline: none;
     color: @gray;
     display: block;
+    font-family: @sans;
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -25,6 +26,7 @@ input:not([type="submit"]) {
     .placeholder({
         vertical-align: top;
         color: @gray;
+        font-family: @sans;
         font-size: 1rem;
         line-height: 1.5rem;
     });
@@ -32,6 +34,7 @@ input:not([type="submit"]) {
 
 input[type="submit"] {
     border: 0;
+    cursor: pointer;
     outline: 0;
     background-color: rgba(0,0,0,0);
     font-size: 0;
@@ -45,13 +48,31 @@ input[type="submit"] {
     top: 1.25rem;
     right: 1.5rem;
     width: 4rem;
-    cursor: pointer;
+    z-index: 2;
 
     .placeholder({
         font-weight: 300;
         font-size: 1.5rem;
         line-height: 2.5rem;
     });
+
+    + svg {
+        height: 2rem;
+        padding: 1rem 1rem;
+        position: absolute;
+        top: 1.25rem;
+        right: 1.5rem;
+        width: 2rem;
+        z-index: 1;
+
+        g {
+            fill: @light-gray;
+        }
+    }
+
+}
+input:valid + input[type="submit"] + svg g {
+    fill: @bright-blue;
 }
 
 form .errors {

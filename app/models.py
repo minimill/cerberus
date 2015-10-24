@@ -32,6 +32,15 @@ class Project(db.Model):
     def static_folder(self):
         return app.config['STATIC_FOLDER_PATH'] + self.path
 
+    def boot_all_users(self):
+        print self.users
+        for user in self.users:
+            print "booting user"
+            user.projects.remove(self)
+            if user.current_project == self:
+                user.current_project = None
+        db.session.commit()
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

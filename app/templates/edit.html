@@ -1,0 +1,14 @@
+{% extends "new.html" %}
+{% import "macros.html" as macros %}
+
+{% block action %}{{ url_for('main.edit', project=project) }}{% endblock %}">
+{% block page_title %}Edit {{ project.name }}{% endblock %}
+{% block passwords %}
+{{ macros.render_field(form.old_slug) }}
+{{ macros.render_field(form.old_password,
+                       placeholder='Enter the current password...') }}
+{{ macros.render_field(form.password,
+                       placeholder='Enter your new password...') }}
+{{ macros.render_field(form.confirm_password,
+                       placeholder='Confirm your new password...') }}
+{% endblock %}

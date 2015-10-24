@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import "macros.html" as macros %}
 {% block title %}{{ project.name }}{% endblock %}
-{% block description %}Log in to view {{ project.name }} securely and instantly.{% endblock %}
+{% block description %}Log in to view {{ project.name }} securely and instantly on {{ super() }}{% endblock %}
 
 {% block body %}
 <form class="login-form" autocomplete="off" method="POST" action="{{ url_for('main.authenticate', project=project) }}">
@@ -12,6 +12,7 @@
     					   size=20,
     					   autocomplete="off",
                            label=False,
+                           required=True,
                            submit=True,
     					   placeholder='Password') }}
 </form>

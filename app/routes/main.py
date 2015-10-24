@@ -1,10 +1,10 @@
 import os
 from flask import (Blueprint, render_template, url_for, redirect, abort,
-                   send_from_directory)
+                   send_from_directory, request)
 from flask.ext.login import current_user, login_user
 from werkzeug.routing import BaseConverter, ValidationError
 from werkzeug.exceptions import HTTPException
-from app.forms import CreateProjectForm, LoginForm
+from app.forms import CreateProjectForm, LoginForm, EditProjectForm
 from app.models import Project, User
 from app import app, db
 
@@ -136,3 +136,29 @@ def authenticate(project):
     return render_template('authenticate.html',
                            project=project,
                            form=form)
+
+
+@main.route('/_/edit/<slug:project>', methods=['GET', 'POST'])
+def edit(project):
+    print "edit"
+    form = EditProjectForm()
+    if form.validate_on_submit():
+        project.name = form.name.data
+        project.slug = form.slug.data
+        project.path = form.path.data
+        if form.password.data:
+            project.password_hash = form.get_password_hash()
+            project.boot_all_users()
+        db.session.commit()
+        return redirect(url_for('.project', project=project))
+
+    if request.method == 'POST':
+        print form.errors
+        print form.data
+
+    form = EditProjectForm(name=project.name,
+                           slug=project.slug,
+                           old_slug=project.slug,
+                           path=project.path)
+
+    return render_template('edit.html', form=form, project=project)

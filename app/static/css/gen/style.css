@@ -69,7 +69,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 16px;
 }
 h1,
@@ -111,11 +111,12 @@ form {
   padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   background-color: rgba(0, 0, 0, 0);
   outline: none;
-  color: #999999;
+  color: #999;
   display: block;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -127,32 +128,37 @@ input:not([type="submit"]) {
 }
 input:not([type="submit"])::-webkit-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-ms-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input[type="submit"] {
   border: 0;
+  cursor: pointer;
   outline: 0;
   background-color: rgba(0, 0, 0, 0);
   font-size: 0;
@@ -166,7 +172,7 @@ input[type="submit"] {
   top: 1.25rem;
   right: 1.5rem;
   width: 4rem;
-  cursor: pointer;
+  z-index: 2;
 }
 input[type="submit"]::-webkit-input-placeholder {
   font-weight: 300;
@@ -190,14 +196,29 @@ input[type="submit"]:-ms-input-placeholder {
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
+input[type="submit"] + svg {
+  height: 2rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 2rem;
+  z-index: 1;
+}
+input[type="submit"] + svg g {
+  fill: #ccc;
+}
+input:valid + input[type="submit"] + svg g {
+  fill: #3399ff;
+}
 form .errors {
   padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
-  color: #ffffff;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem 1.5rem;
   border-radius: 4px;
 }
@@ -302,7 +323,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 16px;
 }
 h1,
@@ -406,11 +427,12 @@ form {
   padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   background-color: rgba(0, 0, 0, 0);
   outline: none;
-  color: #999999;
+  color: #999;
   display: block;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -422,32 +444,37 @@ input:not([type="submit"]) {
 }
 input:not([type="submit"])::-webkit-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-ms-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input[type="submit"] {
   border: 0;
+  cursor: pointer;
   outline: 0;
   background-color: rgba(0, 0, 0, 0);
   font-size: 0;
@@ -461,7 +488,7 @@ input[type="submit"] {
   top: 1.25rem;
   right: 1.5rem;
   width: 4rem;
-  cursor: pointer;
+  z-index: 2;
 }
 input[type="submit"]::-webkit-input-placeholder {
   font-weight: 300;
@@ -485,14 +512,29 @@ input[type="submit"]:-ms-input-placeholder {
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
+input[type="submit"] + svg {
+  height: 2rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 2rem;
+  z-index: 1;
+}
+input[type="submit"] + svg g {
+  fill: #ccc;
+}
+input:valid + input[type="submit"] + svg g {
+  fill: #3399ff;
+}
 form .errors {
   padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
-  color: #ffffff;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem 1.5rem;
   border-radius: 4px;
 }
@@ -597,7 +639,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 16px;
 }
 h1,
@@ -639,11 +681,12 @@ form {
   padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   background-color: rgba(0, 0, 0, 0);
   outline: none;
-  color: #999999;
+  color: #999;
   display: block;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -655,32 +698,37 @@ input:not([type="submit"]) {
 }
 input:not([type="submit"])::-webkit-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-ms-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input[type="submit"] {
   border: 0;
+  cursor: pointer;
   outline: 0;
   background-color: rgba(0, 0, 0, 0);
   font-size: 0;
@@ -694,7 +742,7 @@ input[type="submit"] {
   top: 1.25rem;
   right: 1.5rem;
   width: 4rem;
-  cursor: pointer;
+  z-index: 2;
 }
 input[type="submit"]::-webkit-input-placeholder {
   font-weight: 300;
@@ -718,14 +766,29 @@ input[type="submit"]:-ms-input-placeholder {
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
+input[type="submit"] + svg {
+  height: 2rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 2rem;
+  z-index: 1;
+}
+input[type="submit"] + svg g {
+  fill: #ccc;
+}
+input:valid + input[type="submit"] + svg g {
+  fill: #3399ff;
+}
 form .errors {
   padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
-  color: #ffffff;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem 1.5rem;
   border-radius: 4px;
 }
@@ -945,11 +1008,12 @@ form {
   padding: 0 0 6.875rem;
 }
 input:not([type="submit"]) {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   background-color: rgba(0, 0, 0, 0);
   outline: none;
-  color: #999999;
+  color: #999;
   display: block;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -961,32 +1025,37 @@ input:not([type="submit"]) {
 }
 input:not([type="submit"])::-webkit-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-moz-placeholder {
   /* Firefox 18- */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"])::-moz-placeholder {
   /* Firefox 19+ */
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input:not([type="submit"]):-ms-input-placeholder {
   vertical-align: top;
-  color: #999999;
+  color: #999;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 input[type="submit"] {
   border: 0;
+  cursor: pointer;
   outline: 0;
   background-color: rgba(0, 0, 0, 0);
   font-size: 0;
@@ -1000,7 +1069,7 @@ input[type="submit"] {
   top: 1.25rem;
   right: 1.5rem;
   width: 4rem;
-  cursor: pointer;
+  z-index: 2;
 }
 input[type="submit"]::-webkit-input-placeholder {
   font-weight: 300;
@@ -1024,14 +1093,29 @@ input[type="submit"]:-ms-input-placeholder {
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
+input[type="submit"] + svg {
+  height: 2rem;
+  padding: 1rem 1rem;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 2rem;
+  z-index: 1;
+}
+input[type="submit"] + svg g {
+  fill: #ccc;
+}
+input:valid + input[type="submit"] + svg g {
+  fill: #3399ff;
+}
 form .errors {
   padding-top: 1.5rem;
 }
 form .errors li {
   background-color: #ff3333;
   display: block;
-  color: #ffffff;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   padding: 1rem 1.5rem;
   border-radius: 4px;
 }
@@ -1136,7 +1220,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  font-family: 'Calibre', 'Helvetica Neue', sans-serif;
   font-size: 16px;
 }
 h1,
@@ -1189,7 +1273,7 @@ ol {
 }
 .logo > svg rect,
 .logo > svg polygon {
-  fill: #cccccc;
+  fill: #ccc;
 }
 @media screen and (max-width: 640px) {
   .logo {
