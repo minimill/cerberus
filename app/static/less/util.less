@@ -5,6 +5,13 @@
 			transform: @rule;
 }
 
+.transition(@rule) {
+	-webkit-transition: @rule;
+	   -moz-transition: @rule;
+		 -o-transition: @rule;
+			transition: @rule;
+}
+
 .placeholder(@rules) {
 	&::-webkit-input-placeholder {
 	   @rules();

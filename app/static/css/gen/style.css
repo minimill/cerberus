@@ -207,6 +207,10 @@ input[type="submit"] + svg {
 }
 input[type="submit"] + svg g {
   fill: #ccc;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
 }
 input:valid + input[type="submit"] + svg g {
   fill: #3399ff;
@@ -416,10 +420,6 @@ ol {
     font-size: 5px;
   }
 }
-.border-box {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 form {
   width: 90%;
   max-width: 30rem;
@@ -523,6 +523,10 @@ input[type="submit"] + svg {
 }
 input[type="submit"] + svg g {
   fill: #ccc;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
 }
 input:valid + input[type="submit"] + svg g {
   fill: #3399ff;
@@ -674,6 +678,10 @@ ol {
     margin-bottom: 2.25rem;
   }
 }
+.border-box {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 form {
   width: 90%;
   max-width: 30rem;
@@ -777,6 +785,10 @@ input[type="submit"] + svg {
 }
 input[type="submit"] + svg g {
   fill: #ccc;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
 }
 input:valid + input[type="submit"] + svg g {
   fill: #3399ff;
@@ -1104,6 +1116,10 @@ input[type="submit"] + svg {
 }
 input[type="submit"] + svg g {
   fill: #ccc;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
 }
 input:valid + input[type="submit"] + svg g {
   fill: #3399ff;
