@@ -1,14 +1,27 @@
 # Cerberus
 
-Deploy static sites to obfuscated subdomains using just Git and Nginx.
+Deploy password-protected static websites.
 
-## Setup
+![cerberus](https://work.minimill.co/static/img/favicon-64.png) 
 
+Cerberus is built with [Flask], [Flask-SQLAlchemy], and [LESS].
 
+## Developing
 
-## Usage
+```bash
+virtualenv .
+source bin/activate
+pip install -r config/requirements.txt
+python run.py
+```
 
-1. Run `cerberus init` in a git repo to setup the remote repo and add a new git remote.
-2. `git push deploy`!  Just push to the `deploy` remote and Cerberus will deploy your remote.
+## Reset the Database
 
-[install-nginx]: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-14-04-lts
+```bash
+source bin/activate
+python manage.py
+```
+
+[LESS]: http://lesscss.org/
+[Flask-SQLAlchemy]: http://flask-sqlalchemy.pocoo.org/2.0/
+[Flask]: http://flask.pocoo.org/
