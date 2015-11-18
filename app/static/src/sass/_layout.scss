@@ -1,0 +1,33 @@
+.logo {
+  bottom: 7.5rem;
+  display: block;
+  height: 44px;
+  left: 50%;
+  max-width: 100%;
+  position: fixed;
+  transform: translateX(-50%);
+
+  > svg {
+    height: 44px;
+    left: 0;
+
+    rect, polygon {
+      fill: $light-gray;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .logo {
+    bottom: auto;
+    height: 33px;
+    margin: 0 auto;
+    padding: 3rem 0;
+    position: relative;
+    text-align: center;
+
+    > svg {
+      height: 33px;
+    }
+  }
+}

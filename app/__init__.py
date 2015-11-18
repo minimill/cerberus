@@ -1,6 +1,5 @@
 from flask import Flask
 from flask.ext.login import LoginManager
-from flask.ext.assets import Environment, Bundle
 from flask.ext.sqlalchemy import SQLAlchemy
 from sys import argv
 
@@ -15,7 +14,9 @@ def create_app():
     global login_manager
 
     # Flask
-    app = Flask(__name__)
+    app = Flask(__name__,
+                static_folder='static/dist/',
+                static_url_path='/static')
     app.config.from_object('config.flask_config')
 
     # SQLAlchemy
@@ -24,14 +25,6 @@ def create_app():
     # Login
     login_manager = LoginManager(app)
     login_manager.login_view = 'users.login'
-
-    # Assets
-    assets = Environment(app)
-    less = Bundle('less/*.less',
-                  filters='less',
-                  output='css/gen/style.css',
-                  depends='less/*.less')
-    assets.register('less_all', less)
 
     # Debug
     app.config['DEBUG'] = (len(argv) == 2 and argv[1] == 'debug')

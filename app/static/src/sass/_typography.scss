@@ -1,0 +1,37 @@
+// Font weights
+$extra-bold: 800;
+$bold: 700;
+$medium: 500;
+$regular: 400;
+$light: 300;
+
+// Fonts
+@font-face {
+  font-family: 'Calibre';
+  font-weight: $regular;
+  src: url('/static/font/CalibreWeb-Regular.eot'); // IE9 Compat Modes
+  src: url('/static/font/CalibreWeb-Regular.woff') format('woff');
+}
+
+$sans: 'Calibre', Helvetica, Arial, sans-serif;
+
+h1, .h1 {
+  color: $blue;
+  font-size: 2rem;
+  font-weight: $regular;
+  line-height: 1.5;
+  margin: 0 0 3.875rem;
+  text-align: center;
+}
+
+@media screen and (max-width: $tablet-portrait-max) {
+  h1, .h1 {
+    margin-bottom: 3.875rem;
+  }
+}
+
+@media screen and (max-width: $tablet-landscape-max) {
+  h1, .h1 {
+    margin-bottom: 2.25rem;
+  }
+}
