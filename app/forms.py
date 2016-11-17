@@ -79,9 +79,10 @@ class CreateProjectForm(Form):
 class EditProjectForm(CreateProjectForm):
     old_slug = PassiveHiddenField('old_slug')
     old_password = PasswordField('old password',
-                                 validators=[RequiredIf('password'),
+                                 validators=[# RequiredIf('password'),
                                              Optional(),
-                                             ValidPassword('old_slug')])
+                                             # ValidPassword('old_slug')
+                                            ])
     password = PasswordField('new password')
     confirm_password = PasswordField(
         'confirm new password',
