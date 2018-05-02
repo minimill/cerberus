@@ -14,7 +14,7 @@ try:
     META_URL = 'http://' + META_DOMAIN
     META_IMAGE = 'img/lock.svg'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
-    STATIC_FOLDER_PATH = '/srv/work/private_html/'
+    STATIC_FOLDER_PATH = '/srv/work.minimill.co/private_html/'
 
 except ImportError:
     print >> stderr, 'Could not find config/secrets.py.  Do you have one?'
