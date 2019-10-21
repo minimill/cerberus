@@ -12,7 +12,7 @@ mercurial==4.5.3
 pycparser==2.18
 pyOpenSSL==17.5.0
 pyserial==2.7
-requests==2.20.0
+requests==2.22.0
 sh==1.8
 six==1.11.0
 Twisted==19.7.0
