@@ -3,7 +3,7 @@ autobahn==0.6.4
 certifi==2018.4.16
 cffi==1.11.5
 chardet==3.0.4
-cryptography==2.3
+cryptography==3.2
 enum34==1.1.6
 freetype-py==1.0
 idna==2.6
